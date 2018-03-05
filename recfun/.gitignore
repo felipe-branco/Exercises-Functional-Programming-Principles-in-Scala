@@ -1,0 +1,11 @@
+project/*
+scalastyle/*
+.history
+.cache
+.lib/
+assignment.sbt
+target/
+
+### Scala ###
+*.class
+*.log
