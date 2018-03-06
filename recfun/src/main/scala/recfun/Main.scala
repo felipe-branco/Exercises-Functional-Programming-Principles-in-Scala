@@ -18,6 +18,8 @@ object Main {
     println()
     print(countChange(4, List(1, 2)))
     println()
+    print(sum(x => x*x)(3,5))
+    println()
   }
 
   /**
@@ -53,5 +55,13 @@ object Main {
       else _countChange(money, coins.tail) + _countChange(money - coins.head, coins)
     }
     _countChange(money, coins)
+  }
+
+  def sum(f: Int => Int)(a: Int, b: Int): Int = {
+    def loop(a: Int, acc: Int): Int = {
+      if (a > b) acc
+      else loop(a+1, f(a)+acc)
+    }
+    loop(a, 0)
   }
 }
